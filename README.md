@@ -9,7 +9,12 @@ unix/macOS only
 ```
 mkdir .ninja_tools && cd .ninja_tools
 git clone git@github.com:KausthubK/gcloud_ninja.git
+nano ./gcloud_ninja/gci.sh
 ```
+
+Change the first line to your instance name:
+
+    export GCI_INSTANCE='instance-name'
 ## Modify ~/.zshrc
 Open up ```~/.zshrc``` in any editor of your choice
 
