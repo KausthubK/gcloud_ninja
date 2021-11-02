@@ -1,6 +1,7 @@
 #!/bin/zsh
-export GCI_INSTANCE='instance-name'
+export GCI_INSTANCE='your-vm-instance-name'
 export GCI_EXTERNAL_IP="*"
+export GCI_USERNAME="username"
 
 # 1. start (this will write ssh config)
 # 2. connect (will connect to the current instance)
@@ -19,7 +20,7 @@ function gci-ssh-config-write-external-ip(){
     cp ~/.ssh/config ~/.ssh/config.backup_${backup_time}
     echo "HOST ${GCI_EXTERNAL_IP}" > ~/.ssh/config
     echo "    IdentityFile ~/.ssh/google_compute_engine" >> ~/.ssh/config
-    echo "    User kausthubk" >> ~/.ssh/config 
+    echo "    User ${GCI_USERNAME}" >> ~/.ssh/config 
     echo "    AddKeysToAgent yes" >> ~/.ssh/config
     echo "    UseKeychain yes" >> ~/.ssh/config
     echo "    ForwardAgent yes" >> ~/.ssh/config
