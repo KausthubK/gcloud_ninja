@@ -38,3 +38,9 @@ Or add this line if you want to defensively check for it first:
 ### gci.sh
 - start stop and connect to an instance for ssh
 - will backup your previous ~/ssh/config to ~/.ssh/config.backup_UnixTimeSinceEpoch
+
+## SSH Key Agent forwarding
+This tool forwards specific ssh keys for github as well:
+
+```ssh-add -L``` to list your keys
+```ssh-add -K ~/.ssh/my_pvt_key``` to add your private key to the key agent (MacOS won't let this happen automatically so I add this to my ~/.zshrc ```ssh-add -K ~/.ssh/id_ed25519 &> /dev/null```)
